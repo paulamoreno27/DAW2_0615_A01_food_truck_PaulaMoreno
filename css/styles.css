@@ -1,0 +1,69 @@
+/* Ajuste para el navbar fijo */
+body {
+    padding-top: 70px;
+}
+
+/* Estilo para las cards */
+.card {
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Estilo para el footer */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Iconos sociales en el footer */
+.social-icons a {
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+/* Modal a la derecha */
+.modal-dialog-end {
+    position: absolute;
+    right: 20px;
+    margin: 0;
+}
+
+/* Responsive para móvil */
+@media (max-width: 576px) {
+    .modal-dialog-end {
+        right: 0;
+        left: 0;
+        margin: 10px auto;
+        width: 90%;
+    }
+}
+
+/* Estilo para el breadcrumb */
+.breadcrumb {
+    background-color: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+/* Ajuste de imágenes en carrusel */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px;
+    }
+}
+
+

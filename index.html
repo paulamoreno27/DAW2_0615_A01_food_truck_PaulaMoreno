@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet & Street | Food-Truck</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="icon" type="image/x-icon" href="./img/iconos/iconoHome.jpg">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <!-- Logo y brand -->
+        <a class="navbar-brand" href="index.html" data-bs-toggle="tooltip" title="Tornar a l'inici">
+            <i class="fa-solid fa-burger"></i>
+            Sweet & Street
+        </a>
+
+        <!-- Botón hamburguesa para móvil -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú -->
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav me-auto">
+                <!-- FREDS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-toggle="tooltip" title="Menjar fred">Freds</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="freds/fred1.html" data-bs-toggle="tooltip" title="Veure entrepà ibèric">Entrepà ibèric</a></li>
+                        <li><a class="dropdown-item" href="freds/fred2.html" data-bs-toggle="tooltip" title="Veure entrepà de formatge">Entrepà formatge</a></li>
+                        <li><a class="dropdown-item" href="freds/fred3.html" data-bs-toggle="tooltip" title="Veure amanida">Amanida</a></li>
+                    </ul>
+                </li>
+
+                <!-- CALENTS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-toggle="tooltip" title="Menjar calent">Calents</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="calents/calent1.html" data-bs-toggle="tooltip" title="Veure burger">Burger</a></li>
+                        <li><a class="dropdown-item" href="calents/calent2.html" data-bs-toggle="tooltip" title="Veure frankfurt">Frankfurt</a></li>
+                        <li><a class="dropdown-item" href="calents/calent3.html" data-bs-toggle="tooltip" title="Veure pizza">Pizza</a></li>
+                    </ul>
+                </li>
+
+                <!-- DOLÇOS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-toggle="tooltip" title="Dolços">Dolços</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="dolcos/dolc1.html" data-bs-toggle="tooltip" title="Veure gelat Magnum">Gelat Magnum</a></li>
+                        <li><a class="dropdown-item" href="dolcos/dolc2.html" data-bs-toggle="tooltip" title="Veure crêppe">Crêppe xocolata</a></li>
+                        <li><a class="dropdown-item" href="dolcos/dolc3.html" data-bs-toggle="tooltip" title="Veure gofre">Gofre</a></li>
+                    </ul>
+                </li>
+
+                <!-- BEGUDES -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-toggle="tooltip" title="Begudes">Begudes</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="begudes/beguda1.html" data-bs-toggle="tooltip" title="Veure Coca-Cola">Coca Cola</a></li>
+                        <li><a class="dropdown-item" href="begudes/beguda2.html" data-bs-toggle="tooltip" title="Veure cervesa">Cervesa</a></li>
+                        <li><a class="dropdown-item" href="begudes/beguda3.html" data-bs-toggle="tooltip" title="Veure aigua">Aigua</a></li>
+                    </ul>
+                </li>
+
+                <!-- QUI SOM -->
+                <li class="nav-item">
+                    <a class="nav-link" href="quisom.html" data-bs-toggle="tooltip" title="Coneix la nostra història">Qui Som</a>
+                </li>
+            </ul>
+
+            <!-- Texto de bienvenida -->
+            <span class="navbar-text text-white me-3" id="welcomeText">
+                Benvingut!
+            </span>
+
+            <!-- Botón Login -->
+            <button class="btn btn-success me-2" type="button" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-toggle="tooltip" title="Iniciar sessió">
+                <i class="fa-solid fa-user"></i> Login
+            </button>
+
+            <!-- Botón Logout -->
+            <button class="btn btn-danger" type="button" onclick="logout()" data-bs-toggle="tooltip" title="Tancar sessió">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= MODAL LOGIN ================= -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <!-- Modal a la derecha (modal-dialog-end) y separado del navbar (mt-5) -->
+    <div class="modal-dialog modal-dialog-end mt-5">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Iniciar Sessió</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tancar" data-bs-toggle="tooltip" title="Tancar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nom d'usuari</label>
+                        <input type="text" class="form-control" id="username" placeholder="Introdueix el teu nom" data-bs-toggle="tooltip" title="Escriu el teu nom">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contrasenya</label>
+                        <input type="password" class="form-control" id="password" placeholder="******" data-bs-toggle="tooltip" title="Introdueix la contrasenya">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="loginSubmit()" data-bs-toggle="tooltip" title="Enviar formulari">Enviar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="tooltip" title="Cancel·lar">Cancel·lar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= BODY ================= -->
+<div class="container mt-5 pt-5">
+    <!-- CARRUSEL -->
+   <!-- ================= CARRUSEL (TAMAÑO PEQUEÑO) ================= -->
+<div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+    <!-- Indicadores -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    
+    <!-- Imágenes con altura fija -->
+    <div class="carousel-inner" style="height: 300px;"> <!-- ALTURA FIJA DE 300px -->
+        <div class="carousel-item active h-100">
+            <img src="./img/carousel/foodtruck.jpg" class="d-block w-100 h-100" alt="Food Truck 1" style="object-fit: cover;">
+        </div>
+        <div class="carousel-item h-100">
+            <img src="./img/carousel/entrepa.jpg" class="d-block w-100 h-100" alt="Food Truck 2" style="object-fit: cover;">
+        </div>
+        <div class="carousel-item h-100">
+            <img src="./img/carousel/crepe.jpg" class="d-block w-100 h-100" alt="Food Truck 3" style="object-fit: cover;">
+        </div>
+        <div class="carousel-item h-100">
+            <img src="./img/carousel/cerveza.jpg" class="d-block w-100 h-100" alt="Food Truck 4" style="object-fit: cover;">
+        </div>
+    </div>
+    
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" data-bs-toggle="tooltip" title="Imatge anterior">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" data-bs-toggle="tooltip" title="Imatge següent">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<br><br>
+
+    <!-- BREADCRUMB -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page" data-bs-toggle="tooltip" title="Estàs a la pàgina d'inici">Best seller</li>
+        </ol>
+    </nav>
+
+    <!-- CARDS DE PRODUCTES DESTACATS -->
+    <div class="row text-center g-4">
+        <!-- Card 1 - Burger -->
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="./img/cards/hamburguesa.jpg" class="card-img-top" alt="Burger">
+                <div class="card-body">
+                    <h5 class="card-title" data-bs-toggle="tooltip" title="Hamburguesa clàssica">Burger</h5>
+                    <p class="card-text">Deliciosa burger de vedella amb formatge cheddar, enciam i tomàquet.</p>
+                    <i class="fa-solid fa-thumbs-up text-success me-2" data-bs-toggle="tooltip" title="M'agrada"></i>
+                    <i class="fa-solid fa-thumbs-down text-danger" data-bs-toggle="tooltip" title="No m'agrada"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 - Frankfurt -->
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="./img/cards/frankfurt.jpeg" class="card-img-top" alt="Frankfurt">
+                <div class="card-body">
+                    <h5 class="card-title" data-bs-toggle="tooltip" title="Frankfurt alemany">Frankfurt</h5>
+                    <p class="card-text">Salsitxa alemanya amb pa tou, ceba cruixent i les salses que vulguis.</p>
+                    <i class="fa-solid fa-thumbs-up text-success me-2" data-bs-toggle="tooltip" title="M'agrada"></i>
+                    <i class="fa-solid fa-thumbs-down text-danger" data-bs-toggle="tooltip" title="No m'agrada"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 - Magnum -->
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="./img/cards/gelat.jpg" class="card-img-top" alt="Magnum">
+                <div class="card-body">
+                    <h5 class="card-title" data-bs-toggle="tooltip" title="Gelat Magnum">Gelat Magnum</h5>
+                    <p class="card-text">Gelat de vainilla cobert de xocolata negra, cruixent i cremós.</p>
+                    <i class="fa-solid fa-thumbs-up text-success me-2" data-bs-toggle="tooltip" title="M'agrada"></i>
+                    <i class="fa-solid fa-thumbs-down text-danger" data-bs-toggle="tooltip" title="No m'agrada"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 - Coca Cola -->
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="./img/cards/cocacola.jpg" class="card-img-top" alt="Coca Cola">
+                <div class="card-body">
+                    <h5 class="card-title" data-bs-toggle="tooltip" title="Refresc de cola">Coca Cola</h5>
+                    <p class="card-text">Coca Cola ben freda, ideal per acompanyar qualsevol menjar.</p>
+                    <i class="fa-solid fa-thumbs-up text-success me-2" data-bs-toggle="tooltip" title="M'agrada"></i>
+                    <i class="fa-solid fa-thumbs-down text-danger" data-bs-toggle="tooltip" title="No m'agrada"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGINACIÓ -->
+    <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="freds/fred1.html" data-bs-toggle="tooltip" title="Anar a menjars freds">1</a></li>
+            <li class="page-item"><a class="page-link" href="calents/calent1.html" data-bs-toggle="tooltip" title="Anar a menjars calents">2</a></li>
+            <li class="page-item"><a class="page-link" href="dolcos/dolc1.html" data-bs-toggle="tooltip" title="Anar a dolços">3</a></li>
+            <li class="page-item"><a class="page-link" href="begudes/beguda1.html" data-bs-toggle="tooltip" title="Anar a begudes">4</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-dark text-white text-center p-4 mt-5">
+    <!-- ALERTA DE COOKIES DINS DEL FOOTER -->
+    <div class="alert alert-warning alert-dismissible fade show mb-4" role="alert">
+        <i class="fa-solid fa-cookie-bite me-2"></i>
+        Aquest lloc web utilitza cookies per millorar la teva experiència.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Tancar" data-bs-toggle="tooltip" title="Tancar alerta"></button>
+    </div>
+
+    <h5>Segueix-nos a les xarxes socials</h5>
+    <div class="social-icons mt-3">
+        <a href="#" class="text-white me-3" data-bs-toggle="tooltip" title="Instagram"><i class="fa-brands fa-instagram fa-2x"></i></a>
+        <a href="#" class="text-white me-3" data-bs-toggle="tooltip" title="Facebook"><i class="fa-brands fa-facebook fa-2x"></i></a>
+        <a href="#" class="text-white me-3" data-bs-toggle="tooltip" title="Twitter"><i class="fa-brands fa-twitter fa-2x"></i></a>
+        <a href="#" class="text-white" data-bs-toggle="tooltip" title="TikTok"><i class="fa-brands fa-tiktok fa-2x"></i></a>
+    </div>
+    <p class="mt-3 mb-0">&copy; 2025 Sweet & Street Food-Truck</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui Som | Sweet & Street</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./img/iconos/quisom.png">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-burger"></i> Sweet & Street
+            </a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Freds</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="freds/fred1.html">Ibèric</a></li>
+                            <li><a class="dropdown-item" href="freds/fred2.html">Formatge</a></li>
+                            <li><a class="dropdown-item" href="freds/fred3.html">Amanida</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Calents</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="calents/calent1.html">Burger</a></li>
+                            <li><a class="dropdown-item" href="calents/calent2.html">Frankfurt</a></li>
+                            <li><a class="dropdown-item" href="calents/calent3.html">Pizza</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dolços</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="dolcos/dolc1.html">Magnum</a></li>
+                            <li><a class="dropdown-item" href="dolcos/dolc2.html">Creppe</a></li>
+                            <li><a class="dropdown-item" href="dolcos/dolc3.html">Gofre</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Begudes</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="begudes/beguda1.html">CocaCola</a></li>
+                            <li><a class="dropdown-item" href="begudes/beguda2.html">Cervesa</a></li>
+                            <li><a class="dropdown-item" href="begudes/beguda3.html">Aigua</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="quisom.html">Qui Som</a>
+                    </li>
+
+                </ul>
+
+                <span class="navbar-text text-white me-3" id="welcomeText">
+                    Benvingut!
+                </span>
+
+                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+
+                <button class="btn btn-danger" onclick="logout()">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- BODY -->
+    <div class="container mt-5 pt-5">
+
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Inici</a></li>
+                <li class="breadcrumb-item active">Qui Som</li>
+            </ol>
+        </nav>
+
+        <h1 class="mb-4">Qui Som</h1>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="./img/carousel/foodtruck.jpg" class="img-fluid rounded" alt="Food Truck Sweet & Street">
+            </div>
+
+            <div class="col-md-6">
+                <br><br><br><br><br>
+                <p>
+                    <strong>Sweet & Street</strong> és una food-truck creada per apassionats del menjar urbà. 
+                    Combina sabors dolços i salats amb ingredients de qualitat i productes frescos. 
+                    Ens encanta portar experiències gastronòmiques a fires, esdeveniments i carrers de la ciutat.
+                </p>
+
+                <br><br>
+
+                <p>
+                    📍 Ens trobaràs habitualment a fires gastronòmiques i esdeveniments locals.<br>
+                    📧 Contacte: <a href="mailto:sweetstreet@email.com">sweetstreet@email.com</a><br>
+                    📞 Telèfon: 600 123 456
+                </p>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <i class="fa-solid fa-truck fa-3x mb-2 text-primary"></i>
+                <h5>Food-Truck Mòbil</h5>
+                <p>Portem la nostra cuina allà on ens necessites.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <i class="fa-solid fa-utensils fa-3x mb-2 text-success"></i>
+                <h5>Ingredients Frescos</h5>
+                <p>Utilitzem productes de qualitat i de proximitat.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <i class="fa-solid fa-heart fa-3x mb-2 text-danger"></i>
+                <h5>Passió per la Cuina</h5>
+                <p>Ens apassiona oferir-te el millor menjar urbà amb amor.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-center text-white p-3 mt-5">
+        <p>Segueix-nos</p>
+        <i class="fab fa-instagram mx-2"></i>
+        <i class="fab fa-facebook mx-2"></i>
+        <i class="fab fa-tiktok mx-2"></i>
+        <i class="fab fa-twitter mx-2"></i>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
